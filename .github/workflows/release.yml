@@ -27,7 +27,7 @@ jobs:
           cache: maven
 
       - name: Install maven package
-        run: mvn install
+        run: mvn install -DskipTests=true
 
       - name: Set up JDK 21 sbt
         uses: actions/setup-java@v4
@@ -36,8 +36,8 @@ jobs:
           distribution: 'temurin'
           cache: 'sbt'
 
-      - name: Install maven package
-        run: 'mvn install -DskipTests=true'
+      - name: sbt build
+        run: sbt assembly
 
       - name: Create a Release
         uses: "marvinpinto/action-automatic-releases@latest"
