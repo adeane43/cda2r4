@@ -37,7 +37,7 @@ jobs:
           cache: 'sbt'
 
       - name: Install maven package
-        run: mvn install -DskipTests=true
+        run: 'mvn install -DskipTests=true'
 
       - name: Create a Release
         uses: "marvinpinto/action-automatic-releases@latest"
