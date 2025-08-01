@@ -29,9 +29,13 @@ jobs:
       - name: Install maven package
         run: mvn install -DskipTests=true
 
-      - uses: ankitguptag18/github-action-sbt@v1
+      - name: Setup SBT
+        uses: Jtalk/setup-sbt@v2.0.0
         with:
-          commands: assembly
+          version: 1.11.2
+
+      - name: sbt assembly
+        run: sbt assembly
 
       - name: Create a Release
         uses: "marvinpinto/action-automatic-releases@latest"
