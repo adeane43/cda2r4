@@ -1,6 +1,8 @@
-ThisBuild / version := "0.1.0-SNAPSHOT"
-
+ThisBuild / version := "0.1.3-SNAPSHOT"
 ThisBuild / scalaVersion := "3.7.1"
+
+// Ignore the local sources
+Compile / javaSource := baseDirectory.value / "java_ignore"
 
 val cda2FhirVersion =  "0.1.3-SNAPSHOT"
 
