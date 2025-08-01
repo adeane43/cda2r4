@@ -33,7 +33,7 @@ jobs:
         uses: sbt/setup-sbt@v1
 
       - name: sbt assembly
-        run: sbt assembly
+        run: cd sbt && sbt assembly
 
       - name: Create a Release
         uses: "marvinpinto/action-automatic-releases@latest"
@@ -41,4 +41,4 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           title: "New release"
-          files: './target/scala-3.7.1/cda2r4.jar'
+          files: './sbt/target/scala-3.7.1/cda2r4.jar'
