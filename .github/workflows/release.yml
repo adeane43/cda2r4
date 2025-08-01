@@ -27,7 +27,7 @@ jobs:
           cache: maven
 
       - name: Install maven package
-        run: mvn install -DskipTests=true
+        run: mvn dependency:go-offline && mvn install -DskipTests=true
 
       - name: Setup sbt launcher
         uses: sbt/setup-sbt@v1
