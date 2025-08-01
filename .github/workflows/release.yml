@@ -29,15 +29,9 @@ jobs:
       - name: Install maven package
         run: mvn install -DskipTests=true
 
-      - name: Set up JDK 21 sbt
-        uses: actions/setup-java@v4
+      - uses: ankitguptag18/github-action-sbt@v1
         with:
-          java-version: '21'
-          distribution: 'temurin'
-          cache: 'sbt'
-
-      - name: sbt build
-        run: sbt assembly
+          commands: assembly
 
       - name: Create a Release
         uses: "marvinpinto/action-automatic-releases@latest"
